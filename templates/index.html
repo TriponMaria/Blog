@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog</title>
+    <link rel="stylesheet" href="static/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="top-container"><p class="blog_title">Maria's Blog</p></div>
+    {% for blog_post in posts: %}
+    <div class="post-container" id="post{{ blog_post['id'] }}">
+        <div class="post-title"><p class="post-text">{{ blog_post['title'] }}</p></div>
+        <div class="post-subtitle"><p class="post-text" >{{ blog_post['subtitle'] }}</p></div>
+        <div class="read-article"><a class="post-text" href="{{ url_for('article', id=blog_post['id']) }}">Read</a></div>
+    </div>
+    {% endfor %}
+    <div class="bottom-container"></div>
+</body>
+</html>

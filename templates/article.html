@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Article</title>
+    <link rel="stylesheet" href="../static/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="top-container"><p class="blog_title">My Blog</p></div>
+    {% for blog_post in posts: %}
+    {% if blog_post['id'] == id_post: %}
+    <div class="post-container" id="post-article">
+        <div class="post-title" id="article-title"><p class="post-text">{{ blog_post['title'] }}</p></div>
+        <div class="post-subtitle" id="article-subtitle"><p class="post-text" >{{ blog_post['subtitle'] }}</p></div>
+        <a class="post-text"><div class="post-content">{{ blog_post['body'] }}</div> </a>
+    </div>
+    {% endif %}
+    {% endfor %}
+    <div class="bottom-container" id="bottom-container-article"></div>
+</body>
+</html>
